@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="UpdateCleaner:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/UpdateCleaner_jar</output-path>
+    <root id="archive" name="UpdateCleaner.jar">
+      <element id="module-output" name="UpdateCleaner" />
+    </root>
+  </artifact>
+</component>

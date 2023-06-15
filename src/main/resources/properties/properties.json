@@ -1,0 +1,12 @@
+{
+  "version": 1.0,
+
+  "ignoreFiles": [
+    "update_cleaner",
+    "tempUpdate"
+  ],
+
+  "tempDirectoryName": "tempUpdate",
+
+  "parentExe": "run.exe"
+}
