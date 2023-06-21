@@ -10,6 +10,11 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         DirectoryCleaner.clean();
         try {
             Thread.sleep(1500);
@@ -17,9 +22,11 @@ public class Main {
             throw new RuntimeException(e);
         }
         launchParentProject();
+        System.exit(0);
     }
 
     private static void launchParentProject() {
+
         String parentExe = PropertyManager.INSTANCE.getProperties().getParentExe();
         File[] files = DirectoryManager.getParentProjectDirectory().listFiles();
 

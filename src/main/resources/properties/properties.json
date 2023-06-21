@@ -2,11 +2,11 @@
   "version": 1.0,
 
   "ignoreFiles": [
-    "update_cleaner",
+    "installAndClean",
     "tempUpdate"
   ],
 
   "tempDirectoryName": "tempUpdate",
 
-  "parentExe": "run.exe"
+  "parentExe": "wsd_run.exe"
 }
