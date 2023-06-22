@@ -10,18 +10,20 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        if (DirectoryManager.getUpdaterTempDirectory().exists()) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            DirectoryCleaner.clean();
+            try {
+                Thread.sleep(1500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            launchParentProject();
         }
-        DirectoryCleaner.clean();
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        launchParentProject();
         System.exit(0);
     }
 
@@ -33,7 +35,7 @@ public class Main {
         try {
             if (files != null) {
                 for (File file : files) {
-                    if(file.toPath().endsWith(parentExe)){
+                    if (file.toPath().endsWith(parentExe)) {
                         Desktop.getDesktop().open(file);
                         break;
                     }
